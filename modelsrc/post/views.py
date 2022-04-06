@@ -11,5 +11,25 @@ from django.shortcuts import render, HttpResponse
 
 # Migrations : Uygulamanin veritabanini tutan yerdir. 
 
-def home_view(request):
-    return HttpResponse('<b><h1>Hosgeldiniz</h1></b>')
+def post_home(request):
+    return HttpResponse('<b><h1>Burasi Post Home</h1></b>')
+
+
+def post_index(request):
+    return HttpResponse('<b><h1>Burasi Post index</h1></b>')
+
+
+def post_detail(request):
+    return HttpResponse('<b><h1>Burasi Post detail</h1></b>')
+
+
+def post_create(request):
+    return HttpResponse('<b><h1>Burasi Post create</h1></b>')
+
+
+def post_update(request):
+    return HttpResponse('<b><h1>Burasi Post update</h1></b>')
+
+
+def post_delete(request):
+    return HttpResponse('<b><h1>Burasi Post delete</h1></b>')
