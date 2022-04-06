@@ -1,0 +1,21 @@
+from django.db import models
+
+# Create your models here.
+# Veritabani nesnelerinin olusturdugumuz 
+# ve sorgulama yaptigimiz katmandir. 
+# Ornegin post(gonderi) modeli tanimlanacaksa :
+#   . Baslik
+#   . Tarih
+#   . Icerik
+#   . Resim vb.
+# bilgilere ihtiyac vardir. Model katmani bu bilgilerin 
+# ve daha fazlasinin tanimlandigi yerdir. 
+
+class Post(models.Model):
+    title = models.CharField(max_length=120,verbose_name='Baslik')
+    content = models.TextField(verbose_name='Icerik')
+    publishing_date = models.DateTimeField(verbose_name='Yayimlanma Tarihi')
+
+
+    def __str__(self):
+        return self.title
