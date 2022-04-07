@@ -3,9 +3,9 @@ from post import views
 
 
 urlpatterns = [
-    path('index/', views.post_index),
-    path('detail/<int:id>/', views.post_detail),
-    path('create/', views.post_create),
-    path('update/', views.post_update),
-    path('delete/', views.post_delete),
+    path('index/', views.post_index, name='index'),
+    path('detail/<int:id>/', views.post_detail, name="detail"),
+    path('create/', views.post_create, name='create'),
+    path('update/', views.post_update, name='update'),
+    path('delete/', views.post_delete, name='delete'),
 ]

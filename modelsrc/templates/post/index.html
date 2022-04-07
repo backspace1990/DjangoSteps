@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+{# <a href="/post/detail/{{ post.id }}">{{ post.title }}</a><br> --yorum satiri django #}
     {% for post in posts %}
         {{ post.id }}<br>
-        <a href="/post/detail/{{ post.id }}">{{ post.title }}</a><br>
+        <a href="{% url 'detail' id=post.id %}">{{ post.title }}</a><br>
         {{ post.content }}<br>
         {{ post.publishing_date }}<br>
     {% endfor %}

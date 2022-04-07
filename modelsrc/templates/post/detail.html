@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+    {#<button><a href="/post/index">Geri</a></button>#}
     {{ post.id }}<br>
     {{ post.title }}<br>
     {{ post.content }}<br>
     {{ post.publishing_date }}<br>
-    <button><a href="/post/index">Geri</a></button>
+    <button><a href="{% url 'index' %}">Geri</a></button>
 </body>
 </html>
