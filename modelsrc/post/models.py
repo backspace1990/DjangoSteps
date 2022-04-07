@@ -24,7 +24,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'id': self.id})
+        return reverse('post:detail', kwargs={'id': self.id})
     
     def get_index(self):
-        return reverse('index')
+        return reverse('post:index')

@@ -1,6 +1,11 @@
 from django.urls import path
 from post import views
 
+# Baska uygulamalarda index,detail vb.
+# URL falan varsa hata cikabilir. 
+# Bunu onlemek icin alttaki 
+# isimlendirme kullanilir.
+app_name = 'post'
 
 urlpatterns = [
     path('index/', views.post_index, name='index'),
