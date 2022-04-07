@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 
 # Create your views here.
 # Icinde python fonksiyonlari yazacagimiz
@@ -10,9 +10,12 @@ from django.shortcuts import render, HttpResponse
 # tr karsiligi goruntu demektir view
 
 # Migrations : Uygulamanin veritabanini tutan yerdir. 
+from .models import Post
+
 
 def post_home(request):
-    return HttpResponse('<b><h1>Burasi Post Home</h1></b>')
+    posts = Post.objects.all()
+    return render(request, 'post/index.html', {'posts': posts})
 
 
 def post_index(request):
@@ -20,7 +23,11 @@ def post_index(request):
 
 
 def post_detail(request):
-    return HttpResponse('<b><h1>Burasi Post detail</h1></b>')
+    post = get_object_or_404(Post, id = 2)
+    context = {
+        'post':post
+    }
+    return render(request, 'post/detail.html', context)
 
 
 def post_create(request):
