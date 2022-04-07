@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    {#<button><a href="/post/index">Geri</a></button>#}
+    <!-- {#<button><a href="/post/index">Geri</a></button>#}
+    {#<button><a href="{% url 'index' %}">Geri</a></button> -- 2. adim #} -->
     {{ post.id }}<br>
     {{ post.title }}<br>
     {{ post.content }}<br>
     {{ post.publishing_date }}<br>
-    <button><a href="{% url 'index' %}">Geri</a></button>
+    <button><a href="{{post.get_index}}">Geri</a></button>
 </body>
 </html>
