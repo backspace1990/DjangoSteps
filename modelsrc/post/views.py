@@ -11,6 +11,7 @@ from django.shortcuts import render, HttpResponse, get_object_or_404
 
 # Migrations : Uygulamanin veritabanini tutan yerdir. 
 from .models import Post
+from .forms import PostForm
 
 
 def post_index(request):
@@ -27,7 +28,41 @@ def post_detail(request, id):
 
 
 def post_create(request):
-    return HttpResponse('<b><h1>Burasi Post create</h1></b>')
+    #form = PostForm(request.POST)
+    #context = {
+    #    'form': form,
+    #}
+    #if request.method == "POST":
+        #print(request.POST)
+    #if request.method == "POST": #1.YONTEMMMMMMM
+    #    title = request.POST.get('title')
+    #    content = request.POST.get('content')
+    #    Post.objects.create(title=title, content=content)
+
+    #---------Iyi yontem 1 ---------
+    #if request.method == "POST":
+    #    #formdan gelen bilgileri kaydet
+    #    form = PostForm(request.POST)
+    #    if form.is_valid():
+    #        form.save()
+    #else:
+    #    #formu kullaniciya goster
+    #    form = PostForm()
+    #
+    #context = {
+    #    'form': form,
+    #}
+    #---------------------Iyi yontem 1 sonu
+    #---------Iyi yontem2  ---------
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    
+    context = {
+        'form': form,
+    }
+    #---------------------Iyi yontem 2 sonu
+    return render(request, 'post/form.html', context)
 
 
 def post_update(request):

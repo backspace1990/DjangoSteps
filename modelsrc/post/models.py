@@ -16,7 +16,7 @@ from django.urls import reverse
 class Post(models.Model):
     title = models.CharField(max_length=120,verbose_name='Baslik')
     content = models.TextField(verbose_name='Icerik')
-    publishing_date = models.DateTimeField(verbose_name='Yayimlanma Tarihi')
+    publishing_date = models.DateTimeField(verbose_name='Yayimlanma Tarihi', auto_now_add=True)
 
 #return f"/post/detail/{self.id}/"
 #return "/post/index/"
@@ -28,3 +28,4 @@ class Post(models.Model):
     
     def get_index(self):
         return reverse('post:index')
+    
