@@ -44,7 +44,8 @@ ve diğer eklentilerle gelen başlıca HTTP metodları şunlardır:</p>
 GET ve POST metodları en sık kullanılan metodlar olup 
 sunucudaki kaynaklara erişmek için kullanılırlar.</p><br>
 
-<img src="./get-post.png"width="240" height="180" border="10"/><br>
+<img src="./get-post.png" width=%80 height=%80>
+<br>
 <p>GET metodu ile sorgu metinleri URL içinde gönderilebilir. <br>Bunun en önemli faydası kullanıcıların bookmark edebilmeleri ve aynı sorguyu içeren istekleri daha sonra gönderebilmelerini sağlaması ve tarayıcıda önceki sorguların “geri” tuşu ile veya tarayıcı geçmişinden çağrılarak aynı sayfalara ulaşabilmeleridir.<br> Güvenlik açısından URL’lerin ekranda görüntüleniyor olması ve URL’in hedefine ulaşıncaya kadar ve hedef sunucu üzerinde iz kayıtlarında görülebilmesi gönderilen parametrelerin gizlilik ihtiyacı varsa sıkıntı yaratabilir.<br> Bu nedenlerle hassas isteklerin GET ile gönderilmemelidir.</p><br>
 
 <p><h4>2-)POST:<h4> <br>Bu metod ile sunucuya veri yazdırabilirsiniz.<br> Bu metodla istek parametreleri hem URL içinde hem de mesaj gövdesinde gönderilebilir.<br> Sadece mesaj gövdesinin kullanımı yukarıda sayılan riskleri engelleyecektir.<br> Tarayıcılar geri butonuna basıldığında POST isteğinin mesaj gövdesinde yer alan parametreleri tekrar göndermek isteyip istemedimizi sorarlar.<br> Bunun temel nedeni bir işlemi yanlışlıkla birden fazla yapmayı engellemektir.<br> Bu özellik ve de güvenlik gerekçeleriyle bir işlem gerçekleştirileceğinde POST metodunun kullanılması önerilir.<br></p>
