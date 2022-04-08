@@ -34,7 +34,7 @@ Durum kodlarında 1’den 5’e kadar gruplandırılmıştır.<br>
 3xx     Yönlendirme<br>
 4xx     Tarayıcı Hatası<br>
 5xx     Sunucu Hatası<br>
-<p>
+<p> <br><br>
 HTTP, web browser ile web server arasında
 iletişim kurmamızı sağlayan bir protokoldür.<br>
 HTTP 1.1 versiyonu (RFC 2616) ile tanımlanan
