@@ -29,3 +29,6 @@ class Post(models.Model):
     def get_index(self):
         return reverse('post:index')
     
+    def get_update_post(self):
+        return reverse('post:update', kwargs={'id': self.id})
+    

@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect
 
 # Create your views here.
 # Icinde python fonksiyonlari yazacagimiz
@@ -56,7 +56,8 @@ def post_create(request):
     #---------Iyi yontem2  ---------
     form = PostForm(request.POST or None)
     if form.is_valid():
-        form.save()
+        post = form.save()
+        return HttpResponseRedirect(post.get_absolute_url())
     
     context = {
         'form': form,
@@ -65,8 +66,16 @@ def post_create(request):
     return render(request, 'post/form.html', context)
 
 
-def post_update(request):
-    return HttpResponse('<b><h1>Burasi Post update</h1></b>')
+def post_update(request, id):
+    post = get_object_or_404(Post, id=id)
+    form = PostForm(request.POST or None, instance=post)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(post.get_absolute_url())
+    context = {
+        'form': form,
+    }
+    return render(request, 'post/update.html', context)
 
 
 def post_delete(request):
