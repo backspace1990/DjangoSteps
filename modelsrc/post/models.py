@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import redirect
 
 # Create your models here.
 # Veritabani nesnelerinin olusturdugumuz 
@@ -32,3 +33,5 @@ class Post(models.Model):
     def get_update_post(self):
         return reverse('post:update', kwargs={'id': self.id})
     
+    def get_delete_post(self):
+        return reverse('post:delete', kwargs={'id': self.id})
