@@ -11,12 +11,12 @@
             {% endfor %}
         </ul>
     {% endif %}
-    <form method="POST">
+    <form method="POST" style="position: relative; text-align: center;">
         {% csrf_token %}
         <h1>Form</h1>
         {{ form.as_p }}
         <input type="submit" value="GONDER">
     </form><br>
-    <div><img src="{% static 'postApp/lifecycle_Django.png' %}"></div>
+    <div style="position: relative; text-align: center;"><img src="{% static 'postApp/lifecycle_Django.jpeg' %}"></div>
 
 {% endblock %}
