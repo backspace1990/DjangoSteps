@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %} All Posts {% endblock %}
 
 {% block body %}
 {# <a href="/post/detail/{{ post.id }}">{{ post.title }}</a><br> --yorum satiri django #}
 {#<a href="{% url 'detail' id=post.id %}">{{ post.title }}</a><br> -- 2. adim#}
-    
+    <div><img src="{% static 'postApp/my_post_App.png' %}"></div>
     <button style="height:max-content;"><a href="/post/create/" style="text-decoration: none;">YENI POST OLUSTUR</a></button><br>
     {% for post in posts %}
         {{ post.id }}<br>
@@ -14,6 +14,6 @@
         {{ post.publishing_date }}<br>
         <button><a href="{{ post.get_update_post }}" style="text-decoration: none;">{{ post.title }} + POSTU GUNCELLE</a></button><br>
         <button><a href="{{ post.get_delete_post }}" style="text-decoration: none;">{{ post.title }} + POSTU SIL!!!</a></button><br>
-    {% endfor %}
+    {% endfor %} 
 
 {% endblock %}

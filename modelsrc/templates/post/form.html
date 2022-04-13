@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %} Add Post Page {% endblock %}
 
 {% block body %}
@@ -16,7 +16,7 @@
         <h1>Form</h1>
         {{ form.as_p }}
         <input type="submit" value="GONDER">
-    </form>
-
+    </form><br>
+    <div><img src="{% static 'postApp/lifecycle_Django.png' %}"></div>
 
 {% endblock %}
