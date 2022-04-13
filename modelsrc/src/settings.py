@@ -126,7 +126,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR/'static']
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+#STATIC_ROOT = BASE_DIR / "benim staticlerim"
 #
 #MEDIA_ROOT = BASE_DIR / "uploads"
 #MEDIA_URL = "/images/"
