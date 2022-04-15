@@ -6,20 +6,38 @@
 {# <a href="/post/detail/{{ post.id }}">{{ post.title }}</a><br> --yorum satiri django #}
 {#<a href="{% url 'detail' id=post.id %}">{{ post.title }}</a><br> -- 2. adim#}
     {% for post in posts %}
-        <div class="col-example">
-            <button class="btn btn-primary" type="button">Post ID-NO: {{ post.id }}</button>
+        <div class="container">
+            <div class="row">
+              <div class="col align-self-start">
+                <button class="btn btn-primary" type="button">Post ID-NO: {{ post.id }}</button>
+                <button type="button" class="btn btn-outline-success">
+                    <a href="{{ post.get_absolute_url }}" style="text-decoration: none;">ID NO: {{ post.id }}'li POSTU INCELE</a>
+                </button>
+              </div>
+              <div>
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <h2>{{ post.title }}</h2>
+                        <p>{{ post.content }}</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Publishing Date Posts : <cite title="Source Title">{{ post.publishing_date }}</cite>
+                    </figcaption>
+                    <figure class="text-end">
+                        <blockquote class="blockquote">
+                            <button type="button" class="btn btn-warning">
+                                <a href="{{ post.get_update_post }}" style="text-decoration: none;">ID NO: {{ post.id }}'li + POSTU GUNCELLE</a>
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                <a href="{{ post.get_delete_post }}" style="text-decoration: none;">ID NO: {{ post.id }}'li + POSTU SIL!!!</a>
+                            </button>
+                        </blockquote>
+                    </figure>
+                </figure>
+              </div>
+            </div>
         </div><br>
-        <button type="button" class="btn btn-outline-success">
-            <a href="{{ post.get_absolute_url }}" style="text-decoration: none;">ID NO: {{ post.id }}'li POSTU INCELE</a>
-        </button><br>
-        {{ post.content }}<br>
-        {{ post.publishing_date }}<br>
-        <button type="button" class="btn btn-warning">
-            <a href="{{ post.get_update_post }}" style="text-decoration: none;">ID NO: {{ post.id }}'li + POSTU GUNCELLE</a>
-        </button>
-        <button type="button" class="btn btn-danger">
-            <a href="{{ post.get_delete_post }}" style="text-decoration: none;">ID NO: {{ post.id }}'li + POSTU SIL!!!</a>
-        </button><br><br><br>
+        <br><br><br>
     {% endfor %} 
 
 {% endblock %}
