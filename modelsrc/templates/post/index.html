@@ -18,15 +18,20 @@
           <div style="margin-top: 5px;">
             <figure class="text-center">
                 <blockquote class="blockquote">
-                    <div class="card border-success mb-3">
-                        <div class="card-header">
-                            POST ID: {{ post.id }}
-                        </div>
-                        <div class="card-body text-success">
-                          <h5 class="card-title">{{ post.title }}</h5>
-                          <p class="card-text">{{ post.content }}</p>
-                        </div>
-                      </div>
+                  <div class="card mb-3">
+                    <div class="card-header">
+                        POST ID : {{ post.id }}
+                    </div>
+                    <div style="position: relative; text-align: center;">
+                        {% if post.image %}
+                          <img src="{{ post.image.url }}" class="card-img-top" style="width: 100px; height: 100px;">
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{ post.title }}</h5>
+                      <p class="card-text">{{ post.content }}</p>
+                    </div>
+                  </div>
                 </blockquote>
                 <figcaption class="blockquote-footer">
                   Publishing Date Posts : <cite title="Source Title">{{ post.publishing_date }}</cite>

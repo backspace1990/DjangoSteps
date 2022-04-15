@@ -18,6 +18,7 @@ class Post(models.Model):
     title = models.CharField(max_length=120,verbose_name='Baslik')
     content = models.TextField(verbose_name='Icerik')
     publishing_date = models.DateTimeField(verbose_name='Yayimlanma Tarihi', auto_now_add=True)
+    image = models.FileField(null=True, blank=True)
 
 #return f"/post/detail/{self.id}/"
 #return "/post/index/"

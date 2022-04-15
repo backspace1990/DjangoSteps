@@ -7,22 +7,29 @@
     {#<button><a href="{% url 'index' %}">Geri</a></button> -- 2. adim #} -->
     <div class="container">
         <div class="row">
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary me-md-2" type="button">
-                    Post ID-NO: {{ post.id }}
-                </button>
-                <button class="btn btn-primary" type="button">
-                    <a href="{{post.get_index}}" style="text-decoration: none; color: white;">Geri</a>
-                </button>
+            <div style="margin-top: 10px;">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-primary me-md-2" type="button">
+                        Post ID-NO: {{ post.id }}
+                    </button>
+                    <button class="btn btn-primary" type="button">
+                        <a href="{{post.get_index}}" style="text-decoration: none; color: white;">Geri</a>
+                    </button>
+                </div>
             </div>
             <div style="margin-top: 5px;">
                 <figure class="text-center">
                     <blockquote class="blockquote">
-                        <div class="card border-success mb-3">
+                        <div class="card mb-3">
                             <div class="card-header">
                                 POST ID : {{ post.id }}
                             </div>
-                            <div class="card-body text-success">
+                            <div style="position: relative; text-align: center;">
+                                {% if post.image %}
+                                  <img src="{{ post.image.url }}" class="card-img-top" style="width: 100px; height: 100px;">
+                                {% endif %}
+                            </div>
+                            <div class="card-body">
                               <h5 class="card-title">{{ post.title }}</h5>
                               <p class="card-text">{{ post.content }}</p>
                             </div>
