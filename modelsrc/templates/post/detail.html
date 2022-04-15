@@ -15,11 +15,18 @@
                     <a href="{{post.get_index}}" style="text-decoration: none; color: white;">Geri</a>
                 </button>
             </div>
-            <div>
+            <div style="margin-top: 5px;">
                 <figure class="text-center">
                     <blockquote class="blockquote">
-                        <h2>{{ post.title }}</h2>
-                        <p>{{ post.content }}</p>
+                        <div class="card border-success mb-3">
+                            <div class="card-header">
+                                POST ID : {{ post.id }}
+                            </div>
+                            <div class="card-body text-success">
+                              <h5 class="card-title">{{ post.title }}</h5>
+                              <p class="card-text">{{ post.content }}</p>
+                            </div>
+                        </div>
                     </blockquote>
                     <figcaption class="blockquote-footer">
                       Publishing Date Posts : <cite title="Source Title">{{ post.publishing_date }}</cite>
@@ -27,10 +34,10 @@
                     <figure class="text-end">
                         <blockquote class="blockquote">
                             <button type="button" class="btn btn-warning">
-                                <a href="{{ post.get_update_post }}" style="text-decoration: none;">ID NO: {{ post.id }}'li + POSTU GUNCELLE</a>
+                                <a href="{{ post.get_update_post }}" style="text-decoration: none;">ID NO : {{ post.id }} OLAN POSTU GUNCELLE</a>
                             </button>
                             <button type="button" class="btn btn-danger">
-                                <a href="{{ post.get_delete_post }}" style="text-decoration: none;">ID NO: {{ post.id }}'li + POSTU SIL!!!</a>
+                                <a href="{{ post.get_delete_post }}" style="text-decoration: none;">ID NO: {{ post.id }} OLAN POSTU SIL!!!</a>
                             </button>
                         </blockquote>
                     </figure>
@@ -38,6 +45,5 @@
             </div>
         </div>
     </div><br>
-    <div style="position: relative; text-align: center;"><img src="{% static 'postApp/my_post_App.png' %}" height="500px"></div><br>
-    
+    <div style="position: relative; text-align: center;"><img src="{% static 'postApp/my_post_App.png' %}" height="500px"></div>
 {% endblock %}
