@@ -18,7 +18,7 @@ class Post(models.Model):
     title = models.CharField(max_length=120,verbose_name='Baslik')
     content = models.TextField(verbose_name='Icerik')
     publishing_date = models.DateTimeField(verbose_name='Yayimlanma Tarihi', auto_now_add=True)
-    image = models.FileField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
 #return f"/post/detail/{self.id}/"
 #return "/post/index/"
@@ -36,3 +36,8 @@ class Post(models.Model):
     
     def get_delete_post(self):
         return reverse('post:delete', kwargs={'id': self.id})
+    
+    class Meta:
+        ordering = ["publishing_date"] #burada Meta clasimizi publishing_date ye bagli kildik. yani en eskiden simdiye,  -publishing_date yazinca tam tersi
+        #ordering = ["-id"]
+        #ordering = ["publishing_date", "id"] # boyle olunca tarihi ayni olanlarin id alanlarina bakilir

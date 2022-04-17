@@ -1,4 +1,6 @@
+import re
 from django.shortcuts import render, HttpResponse, get_object_or_404, HttpResponseRedirect, redirect
+from django.http import Http404
 
 # Create your views here.
 # Icinde python fonksiyonlari yazacagimiz
@@ -55,6 +57,9 @@ def post_create(request):
     #}
     #---------------------Iyi yontem 1 sonu
     #---------Iyi yontem2  ---------
+    #if not request.user.is_authenticated():
+    #    return Http404() #yetkisiz veya tam uyelik olusturmamis kullanicilar siteye erisemeyecekler
+
     form = PostForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         post = form.save()

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'post.apps.PostConfig',
     #Third-party applications
     'crispy_forms',
+    'django_cleanup.apps.CleanupConfig',#kaldirilan resimli postun silinmesi durumunda resmin de silinmesini saglar
 ]
 
 MIDDLEWARE = [
