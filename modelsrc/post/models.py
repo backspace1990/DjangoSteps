@@ -19,6 +19,8 @@ class Post(models.Model):
     content = models.TextField(verbose_name='Icerik')
     publishing_date = models.DateTimeField(verbose_name='Yayimlanma Tarihi', auto_now_add=True)
     image = models.ImageField(null=True, blank=True)
+    slug = models.SlugField(unique=True)
+
 
 #return f"/post/detail/{self.id}/"
 #return "/post/index/"
